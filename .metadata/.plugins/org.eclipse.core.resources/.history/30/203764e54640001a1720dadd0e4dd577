@@ -1,0 +1,12 @@
+package com.ff.mapper;
+
+import org.apache.ibatis.annotations.Param;
+
+public interface UserMapper {
+	/**
+	 * 增加教室
+	 * @param teacher
+	 * @return  是否成功
+	 */
+	public int insertClassRoom(@Param("myName")String name,@Param("teacherId")int teacherId);
+}

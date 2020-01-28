@@ -1,0 +1,25 @@
+package com.ff.mapper;
+
+import java.util.List;
+
+import com.ff.po.Student;
+
+public interface StudentMapper {
+
+
+
+	/**
+	 * 查询所有的学生
+	 * @return
+	 */
+	public List<Student> selectAllStudent();
+	
+	/**
+	 * 获得学生对象
+	 * @return
+	 */
+	public Student selectStudentById(Student student);
+	
+	
+	
+}

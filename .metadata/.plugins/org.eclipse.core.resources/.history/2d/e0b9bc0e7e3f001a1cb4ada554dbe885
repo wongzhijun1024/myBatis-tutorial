@@ -1,0 +1,39 @@
+package com.ff.test;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.ff.mapper.TeacherMapper;
+import com.ff.po.Teacher;
+import com.ff.util.DBUtil;
+
+public class TeacherMapperTest {
+	
+	
+
+
+	
+	public void selectAllTeacherTest() {
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession(); 
+		TeacherMapper teacherMapper = session.getMapper(TeacherMapper.class);
+        List<Teacher> list = teacherMapper.selectAllTeacher();
+		session.commit();//Ã·Ωª
+		session.close();
+		for (Teacher teacher : list) {
+			System.out.println(teacher);
+		}
+	}
+	
+	public static void main(String[] args) {
+		TeacherMapperTest test = new TeacherMapperTest();
+		test.selectAllTeacherTest();
+	}
+}
+
+
+
+
+
+
+

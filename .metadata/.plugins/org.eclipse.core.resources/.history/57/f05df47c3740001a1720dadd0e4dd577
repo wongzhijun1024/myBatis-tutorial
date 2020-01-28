@@ -1,0 +1,18 @@
+package com.ff.po;
+public class ClassRoom {
+	/**
+	 * 教室id
+	 */
+   private int id;
+   
+   /**
+    * 教室的姓名
+    */
+   private String name;
+   
+   /**
+    * 老师的id
+    */
+   private int teacherId;
+   
+}

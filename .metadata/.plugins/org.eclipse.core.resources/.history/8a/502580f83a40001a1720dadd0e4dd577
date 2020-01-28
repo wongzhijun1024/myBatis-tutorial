@@ -1,0 +1,42 @@
+package com.ff.test;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.ff.mapper.ClassRoomMapper;
+import com.ff.mapper.TeacherMapper;
+import com.ff.po.Teacher;
+import com.ff.util.DBUtil;
+
+public class ClassMapperTest {
+	
+	
+	public void insertClassRoom() {
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession(); 
+		ClassRoomMapper classRoomMapper = session.getMapper(ClassRoomMapper.class);
+	
+		classRoomMapper.insertClassRoom("一班", teacherId)
+		map.put("myName", "刘少");
+		map.put("mySex", "男");
+		map.put("myAge", 100);
+		map.put("myPwd", "1234567");
+		teacherMapper.insertTeacher(map);
+		session.commit();//提交
+		        session.close();
+}
+	
+	public static void main(String[] args) {
+		ClassMapperTest test = new ClassMapperTest();
+		test.insertClassRoom();
+	}
+}
+
+
+
+
+
+
+

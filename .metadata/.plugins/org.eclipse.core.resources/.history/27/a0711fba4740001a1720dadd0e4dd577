@@ -1,0 +1,12 @@
+package com.ff.mapper;
+
+import org.apache.ibatis.annotations.Param;
+
+public interface StudentMapper {
+	/**
+	 * 增加教室
+	 * @param teacher
+	 * @return  是否成功
+	 */
+	public int insertStudent(Student student);
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.annotations.Param"/>
+<fullyQualifiedTypeName name="com.ff.mapper.ClassRoomMapper"/>
+<fullyQualifiedTypeName name="com.ff.mapper.StudentMapper"/>
+<fullyQualifiedTypeName name="com.ff.po.Student"/>
+<fullyQualifiedTypeName name="com.ff.po.ClassRoom"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>

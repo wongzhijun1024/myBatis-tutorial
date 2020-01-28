@@ -1,0 +1,16 @@
+package com.ff.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
+import com.ff.po.ClassRoom;
+
+public interface ClassRoomMapper {
+	
+	/**
+	 * 获得教室
+	 * @return 教室对象
+	 */
+	public List<ClassRoom>  selectAllClassAndStu();
+}

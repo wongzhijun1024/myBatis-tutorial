@@ -1,0 +1,57 @@
+package com.ff.test;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import com.ff.mapper.ClassRoomMapper;
+import com.ff.po.ClassRoom;
+import com.ff.util.DBUtil;
+
+public class ClassMapperTest {
+
+	public void insertClassRoom() {
+		// 创建SqlSession会话对象
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		// 创建教室映射器
+		ClassRoomMapper classRoomMapper = session.getMapper(ClassRoomMapper.class);
+		// 插入数据
+		classRoomMapper.insertClassRoom("一班", 1);
+		// 会话提交
+		session.commit();
+		// 会话关闭
+		session.close();
+	}
+
+	public void selectAllClass() {
+		// 创建SqlSession会话对象
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		// 创建教室映射器
+		ClassRoomMapper classRoomMapper = session.getMapper(ClassRoomMapper.class);
+		// 插入数据
+		List<ClassRoom> rooms=classRoomMapper.selectAllClass();
+		System.out.print(rooms);
+		// 会话提交
+		session.commit();
+		// 会话关闭
+		session.close();
+	}
+	
+	public void selectAllClassAndStu(){
+		// 创建SqlSession会话对象
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		// 创建教室映射器
+		ClassRoomMapper classRoomMapper = session.getMapper(ClassRoomMapper.class);
+		// 插入数据
+		ClassRoom room=classRoomMapper.selectAllClassAndStu();
+		System.out.print(rooms);
+		// 会话提交
+		session.commit();
+		// 会话关闭
+		session.close();
+	}
+
+	public static void main(String[] args) {
+		ClassMapperTest test = new ClassMapperTest();
+		test.selectAllClassAndStu();
+	}
+}

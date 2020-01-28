@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ff.mapper.ClassRoomMapper">
+	<insert id="insertClassRoom">
+		insert into classroom(name, teacherId)
+		values(#{myName},#{teacherId})
+	</insert>
+	<select id="selectAllClassAndStu" resultType="com.ff.po.ClassRoom">
+		select  classroom.id as id, classroom.name as name, 
+		student.id as stuid, stu.name as stuname, sex as stusex
+		from stu inner join clazz on clazz.id=stu.fclazzid
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

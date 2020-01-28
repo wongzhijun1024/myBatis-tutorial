@@ -1,0 +1,21 @@
+package com.ff.po;
+
+public class Student {
+	/**
+	 * 教室id
+	 */
+	private int id;
+
+	/**
+	 * 学生的姓名
+	 */
+	private String name;
+
+	/**
+	 * 教室id
+	 */
+	private int teacherId;
+
+
+
+}

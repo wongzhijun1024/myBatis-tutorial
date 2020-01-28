@@ -1,0 +1,22 @@
+package com.ff.mapper;
+
+import java.util.List;
+import java.util.Map;
+
+import org.apache.ibatis.annotations.Param;
+
+import com.ff.po.ClassRoom;
+
+public interface ClassRoomMapper {
+	/**
+	 * 查询所有教室
+	 * @return  教室列表
+	 */
+	public List<ClassRoom> selectAllClassRoom();
+	/**
+	 * 增加教室
+	 * @param teacher
+	 * @return  是否成功
+	 */
+	public int insertClassRoom(@Param("myName")String name,@Param("mySex")String sex);
+}

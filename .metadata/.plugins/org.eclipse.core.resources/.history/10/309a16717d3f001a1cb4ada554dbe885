@@ -1,0 +1,51 @@
+package com.ff.test;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.ff.mapper.TeacherMapper;
+import com.ff.po.Teacher;
+import com.ff.util.DBUtil;
+
+public class TeacherMapperTest {
+	
+	
+	public void insertTeacherTest1() {
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession(); 
+		Teacher teacher = new Teacher("明明", "男", 23, "123");
+		session.insert("com.ff.mapper.TeacherMapper.insertTeacher", teacher);
+		session.commit();//提交
+		session.close();
+	}
+
+
+	
+	public void selectAllTeacherTest() {
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession(); 
+		TeacherMapper teacherMapper = session.getMapper(TeacherMapper.class);
+		System.out.println(">"+teacherMapper);
+		System.out.println(session.getMapper(TeacherMapper.class));
+		System.out.println(session.getMapper(TeacherMapper.class));
+        List<Teacher> list = teacherMapper.selectAllTeacher();
+		session.commit();//提交
+		session.close();
+		for (Teacher teacher : list) {
+			System.out.println(teacher);
+		}
+	}
+	
+	public static void main(String[] args) {
+		TeacherMapperTest test = new TeacherMapperTest();
+		test.insertTeacherTest1();
+		test.insertTeacherTest2();
+		test.selectAllTeacherTest();
+	}
+}
+
+
+
+
+
+
+

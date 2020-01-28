@@ -1,0 +1,16 @@
+package com.ff.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
+public interface ClassRoomMapper {
+	/**
+	 * 增加教室
+	 * @param teacher
+	 * @return  是否成功
+	 */
+	public int insertClassRoom(@Param("myName")String name,@Param("teacherId")int teacherId);
+	
+	public List<ClassRoom>  selectAllClassAndStu();
+}

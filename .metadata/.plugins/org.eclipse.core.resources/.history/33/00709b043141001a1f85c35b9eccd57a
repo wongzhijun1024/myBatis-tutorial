@@ -1,0 +1,5 @@
+driver=com.mysql.cj.jdbc.Driver
+url=jdbc:mysql://127.0.0.1:3306/ff08?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC
+user=root
+pwd=root
+myAutoCommit=false

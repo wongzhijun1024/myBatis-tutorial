@@ -1,0 +1,12 @@
+package com.ff.mapper;
+
+import com.ff.po.Student;
+
+public interface StudentMapper {
+	/**
+	 * 增加学生
+	 * @param teacher
+	 * @return  是否成功
+	 */
+	public int insertStudent(Student student);
+}

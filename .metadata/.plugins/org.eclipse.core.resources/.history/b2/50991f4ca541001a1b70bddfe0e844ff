@@ -1,0 +1,31 @@
+package com.ff.test;
+
+import org.apache.ibatis.session.SqlSession;
+import com.ff.mapper.StudentMapper;
+import com.ff.po.Student;
+import com.ff.util.DBUtil;
+
+public class StudentMapperTest {
+
+	public void selectStudentById() {
+		// 创建SqlSession会话对象
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		// 创建教室映射器
+		StudentMapper studentMapper = session.getMapper(StudentMapper.class);
+
+		Student student = new Student();
+		student.setId(2);
+		// 获得学生列表
+		 student = studentMapper.selectStudentById(student);
+		System.out.print(student);
+		// 会话提交
+		session.commit();
+		// 会话关闭
+		session.close();
+	}
+
+	public static void main(String[] args) {
+		StudentMapperTest test = new StudentMapperTest();
+		test.selectStudentById();
+	}
+}

@@ -1,0 +1,65 @@
+package com.ff.test;
+
+import org.apache.ibatis.session.SqlSession;
+import com.ff.mapper.StudentMapper;
+import com.ff.po.Student;
+import com.ff.util.DBUtil;
+
+public class StudentMapperTest {
+
+	public void insertStudent() {
+		// 创建SqlSession会话对象
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		// 创建教室映射器
+		StudentMapper studentMapper = session.getMapper(StudentMapper.class);
+		// 创建学生对象
+		Student student = new Student();
+		student.setName("小刚");
+		student.setClassroomId(1);
+		// 插入数据
+		studentMapper.insertStudent(student);
+		// 会话提交
+		session.commit();
+		// 会话关闭
+		session.close();
+	}
+
+	public void deleteStudent() {
+		// 创建SqlSession会话对象
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		// 创建教室映射器
+		StudentMapper studentMapper = session.getMapper(StudentMapper.class);
+		// 创建学生对象
+		Student student = new Student();
+		student.setId(2);
+		// 插入数据
+		studentMapper.deleteStudentById(student);
+		// 会话提交
+		session.commit();
+		// 会话关闭
+		session.close();
+	}
+
+	public void updateStudent() {
+		// 创建SqlSession会话对象
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		// 创建教室映射器
+		StudentMapper studentMapper = session.getMapper(StudentMapper.class);
+		// 创建学生对象
+		Student student = new Student();
+		student.setId(2);
+		student.setName("小强");
+		student.setClassroomId(2);
+		// 插入数据
+		studentMapper.updateStudentById(student)
+		// 会话提交
+		session.commit();
+		// 会话关闭
+		session.close();
+	}
+
+	public static void main(String[] args) {
+		StudentMapperTest test = new StudentMapperTest();
+		test.deleteStudent();
+	}
+}

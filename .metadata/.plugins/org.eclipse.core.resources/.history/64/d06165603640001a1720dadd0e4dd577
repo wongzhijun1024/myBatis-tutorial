@@ -1,0 +1,8 @@
+package com.ff.po;
+public class ClassRoom {
+	/**
+	 * ΩÃ “id
+	 */
+   private int id;
+   
+}

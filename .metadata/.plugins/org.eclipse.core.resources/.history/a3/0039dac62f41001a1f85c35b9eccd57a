@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<properties resource="jdbc.properties" />
+	<settings>
+		<!-- jdbc的getGeneratedKeys 获得数据库自增主键值 -->
+		<setting name="useGeneratedKeys" value="true" />
+		<!-- 使用列别名替换列名 默认为：true -->
+		<setting name="useColumnLabel" value="true" />
+		<!-- 开启驼峰合名转换：Table(create_tiem)-Entity(createTime) -->
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+		<!-- 打开延迟加载的开关 -->
+        <setting name="lazyLoadingEnabled" value="true" />
+        <!-- 将积极加载改为消息加载即按需加载 -->
+        <setting name="aggressiveLazyLoading" value="false" />
+        <!-- 关闭触发立即加载的方法equals,clone,hashCode,toString -->
+		<setting name="lazyLoadTriggerMethods" value=""/>
+	</settings>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC">
+				<property name="autoCommit" value="${myAutoCommit}" />
+			</transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${user}" />
+				<property name="password" value="${pwd}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="mapper/TeacherMapping.xml" />
+	</mappers>
+</configuration>

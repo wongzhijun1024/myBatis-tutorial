@@ -1,0 +1,29 @@
+package com.ff.test;
+
+import org.apache.ibatis.session.SqlSession;
+import com.ff.mapper.ClassRoomMapper;
+import com.ff.util.DBUtil;
+
+public class ClassMapperTest {
+	
+	
+	public void insertClassRoom() {
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession(); 
+		ClassRoomMapper classRoomMapper = session.getMapper(ClassRoomMapper.class);
+		classRoomMapper.insertClassRoom("“ª∞‡", 1);
+		session.commit();//Ã·Ωª
+		session.close();
+}
+	
+	public static void main(String[] args) {
+		ClassMapperTest test = new ClassMapperTest();
+		test.insertClassRoom();
+	}
+}
+
+
+
+
+
+
+

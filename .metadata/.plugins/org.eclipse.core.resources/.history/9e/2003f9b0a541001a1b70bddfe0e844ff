@@ -1,0 +1,40 @@
+package com.xxx.demo;
+
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+
+import com.xxx.util.MyBatisUtil;
+
+public class ClazzMapperTest {
+	/**
+	 * 一级缓存测试
+	 */
+	@Test
+	public void testSelectClazzById() {
+		SqlSession sqlSession = MyBatisUtil.getSqlSession();
+		ClazzMapper mapper = sqlSession.getMapper(ClazzMapper.class);
+		Clazz clazz1 = mapper.selectClazzById(1);
+		System.out.println(clazz1);
+		
+//		mapper.insertStu(new Stu("小明", 1));//执行后缓存会清空
+//		this.insertStu(mapper);//执行后缓存会清空
+//		sqlSession.clearCache();//执行后缓存会清空
+//		sqlSession.commit();//执行后缓存会清空
+		
+		Clazz clazz2 = mapper.selectClazzById(1);
+		System.out.println(clazz2);
+		sqlSession.close();
+	}
+	
+	@Test
+	public void testSelectClazzById2() {
+		SqlSession sqlSession = MyBatisUtil.getSqlSession();
+		ClazzMapper mapper = sqlSession.getMapper(ClazzMapper.class);
+		Clazz clazz1 = mapper.selectClazzById(1);
+		System.out.println(clazz1);
+		clazz1.setName("修改过的名字");
+		Clazz clazz2 = mapper.selectClazzById(1);
+		System.out.println(clazz2);
+		sqlSession.close();
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MyBatis-03-config/src/main/resources/mybatis/dbconfig.properties&apos; to &apos;jdbc.properties&apos;" description="Rename resource &apos;dbconfig.properties&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/mybatis/dbconfig.properties" name="jdbc.properties" stamp="1591795092495" updateReferences="true"/>
+</session>

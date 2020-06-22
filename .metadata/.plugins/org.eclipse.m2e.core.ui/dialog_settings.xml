@@ -2,6 +2,31 @@
 <section name="Workbench">
 	<section name="org.eclipse.m2e.core.pom.dependencies">
 	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="com.hw"/>
+		</list>
+		<list key="name">
+			<item value="MyBatis-03-config2"/>
+			<item value="MyBatis-03-config"/>
+			<item value="MyBatis_03_config"/>
+		</list>
+		<list key="artifactId">
+			<item value="MyBatis-03-config"/>
+			<item value="MyBatis_03_config"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
 	<section name="org.eclipse.m2e.core.pom.overview">
 		<list key="ciManagementUrl">
 		</list>
@@ -14,12 +39,15 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
-			<item value="E:\01developer\02code\07java\MyBatis-Tutorial\MyBatis_ComprehensiveRelevance2"/>
-			<item value="E:\01developer\02code\07java\MyBatis-Tutorial\MyBatis_ComprehensiveRelevance1"/>
-			<item value="E:\01developer\02code\07java\MyBatis_ComprehensiveRelevance2"/>
-			<item value="C:\Users\ff08\Desktop\MyBatis_ComprehensiveRelevance1"/>
-			<item value="C:\Users\ff08\Desktop\MyBatis_ComprehensiveRelevance2"/>
-			<item value="E:\01developer\02code\07java\MyBatis-Tutorial\myBatis"/>
+			<item value="E:\01developer\02code\02java\myBatis\code\day04_eesy_04annoOne2Many"/>
+			<item value="E:\01developer\02code\02java\myBatis\code\day04_eesy_03annotation_mybatis"/>
+			<item value="E:\01developer\02code\02java\myBatis\code\day04_eesy_02cache"/>
+			<item value="E:\01developer\02code\02java\myBatis\code\day04_eesy_01lazy"/>
+			<item value="E:\01developer\02code\02java\myBatis\code\day01_eesy_04mybatis_design"/>
+			<item value="E:\01developer\02code\02java\myBatis\code\day01_eesy_03mybatis_dao"/>
+			<item value="E:\01developer\02code\02java\myBatis\code\day01_eesy_02mybatis_annotation"/>
+			<item value="E:\01developer\02code\02java\myBatis\code\day01_eesy_01mybatis"/>
+			<item value="E:\01developer\02code\02java\myBatis\code\myBatis"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -28,6 +56,49 @@
 			<item value="[groupId].[artifactId]"/>
 			<item value="[groupId].[artifactId]-[version]"/>
 			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="E:\01developer\02code\02java\myBatis\code"/>
+			<item value="E:\01developer\02code\02java\myBatis\code\MyBatis_02_config"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>
 </section>

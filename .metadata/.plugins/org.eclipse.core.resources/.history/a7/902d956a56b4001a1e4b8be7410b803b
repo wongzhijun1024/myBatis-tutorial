@@ -1,0 +1,51 @@
+package com.ff.test;
+
+import com.ff.bean.User;
+import com.ff.maper.IUserDao;
+import com.ff.mybatis.util.DBUtil;
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+import java.util.List;
+
+
+public class AnnotationCRUDTest {
+  
+    public static void main(String[] args) {
+    	AnnotationCRUDTest test = new AnnotationCRUDTest();
+    	test.testFindAll();
+	}
+   
+
+    
+    public  void  testFindAll(){
+    	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+    	IUserDao mapper = session.getMapper(IUserDao.class);
+        List<User> users = mapper.findAll();
+//        for(User user : users){
+//            System.out.println("---每个用户的信息----");
+//            System.out.println(user);
+//            System.out.println(user.getAccounts());
+//        }
+    }
+
+    @Test
+    public void testFindOne(){
+    	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+    	IUserDao mapper = session.getMapper(IUserDao.class);
+        User user = mapper.findById(57);
+        System.out.println(user);
+    }
+
+
+    @Test
+    public  void testFindByName(){
+    	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+    	IUserDao mapper = session.getMapper(IUserDao.class);
+        List<User> users = mapper.findUserByName("%mybatis%");
+        for(User user : users){
+            System.out.println(user);
+        }
+    }
+
+
+}

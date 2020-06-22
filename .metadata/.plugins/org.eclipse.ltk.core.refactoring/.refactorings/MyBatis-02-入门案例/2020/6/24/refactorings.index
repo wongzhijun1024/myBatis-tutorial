@@ -1,0 +1,17 @@
+1591808215162	Rename package 'com.itheima.dao'
+1591808225694	Rename package 'com.itheima.domain'
+1591808573222	Copy file
+1591808579934	Delete element
+1591808585156	Delete element
+1591808611147	Rename resource 'IUserDao.xml'
+1591808702508	Rename package 'com.hw.domain'
+1591808717199	Rename package 'com.hw.dao'
+1591808816213	Move 'SqlMapConfig.xml' to 'mybatis'
+1591808821904	Delete element
+1591808825589	Delete element
+1591808827623	Delete element
+1591808858478	Delete element
+1591808883982	Rename package 'com.itheima.test'
+1591808945385	Rename package 'com.hw.mapper'
+1591808953754	Rename package 'com.hw.been'
+1591809164857	Rename type 'IUserDao'

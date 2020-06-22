@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="com.ff.mapper.IUserMapper">
+    <!--配置查询所有-->
+    <select id="findAll" resultType="com.ff.been.User">
+        select * from user
+    </select>
+</mapper>

@@ -1,0 +1,38 @@
+package com.ff.test;
+
+import com.ff.bean.Account;
+import com.ff.maper.IAccountDao;
+import com.ff.mapper.IUserMapper;
+import com.ff.mybatis.util.DBUtil;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.io.InputStream;
+import java.util.List;
+
+
+public class AccountTest {
+
+
+    
+    public  void  testFindAll(){
+    	
+    	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+    	IAccountDao mapper = session.getMapper(IAccountDao.class);
+        List<Account> accounts = mapper.findAll();
+        for(Account account : accounts){
+            System.out.println("----每个账户的信息-----");
+            System.out.println(account);
+            System.out.println(account.getUser());
+        }
+    }
+
+
+
+}

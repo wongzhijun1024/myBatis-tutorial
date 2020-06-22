@@ -1,0 +1,18 @@
+1591853563086	Delete element
+1591853575923	Copy file
+1591853579043	Delete element
+1591853596974	Copy file
+1591853631815	Delete element
+1591853684446	Rename resource 'IUserDao.xml'
+1591853794369	Rename package 'com.itheima.dao'
+1591853812479	Rename package 'com.itheima.domain'
+1591853826220	Rename package 'com.itheima.mybatis.annotations'
+1591853835872	Rename package 'com.itheima.mybatis.cfg'
+1591853845763	Rename package 'com.itheima.mybatis.io'
+1591853861891	Rename package 'com.itheima.mybatis.sqlsession'
+1591853873099	Rename package 'com.itheima.mybatis.sqlsession.defaults'
+1591853881233	Rename package 'com.itheima.mybatis.sqlsession.proxy'
+1591853890343	Rename package 'com.itheima.mybatis.utils'
+1591853904003	Delete element
+1591853954805	Rename type 'IUserDao'
+1591854215804	Rename package 'com.itheima.test'

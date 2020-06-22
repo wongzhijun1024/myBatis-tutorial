@@ -1,0 +1,122 @@
+package com.ff.test;
+
+import com.ff.bean.QueryVo;
+import com.ff.bean.User;
+import com.ff.mapper.IUserMapper;
+import com.ff.mybatis.util.DBUtil;
+import org.apache.ibatis.session.SqlSession;
+import org.junit.Test;
+import java.util.Date;
+import java.util.List;
+
+public class MybatisTest {
+
+
+
+
+
+
+
+
+	public void testFindAll() {
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		IUserMapper mapper = session.getMapper(IUserMapper.class);
+		// 5.执行查询所有方法
+		List<User> users = mapper.findAll();
+		for (User user : users) {
+			System.out.println(user);
+		}
+
+	}
+
+	
+	public void testSave() {
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		IUserMapper mapper = session.getMapper(IUserMapper.class);
+		User user = new User();
+		user.setUserName("autocommit");
+		user.setUserAddress("北京市顺义区");
+		user.setUserSex("男");
+		user.setUserBirthday(new Date());
+		System.out.println("保存操作之前：" + user);
+		// 5.执行保存方法
+		mapper.saveUser(user);
+
+		System.out.println("保存操作之后：" + user);
+	}
+
+
+	public void testUpdate() {
+		
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		IUserMapper mapper = session.getMapper(IUserMapper.class);
+		User user = new User();
+		user.setUserId(50);
+		user.setUserName("mybastis update user");
+		user.setUserAddress("北京市顺义区");
+		user.setUserSex("女");
+		user.setUserBirthday(new Date());
+
+		// 5.执行保存方法
+		mapper.updateUser(user);
+	}
+
+	/**
+	 * 测试删除操作
+	 */
+	@Test
+	public void testDelete() {
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		IUserMapper mapper = session.getMapper(IUserMapper.class);
+		// 5.执行删除方法
+		mapper.deleteUser(48);
+	}
+
+
+	public void testFindOne() {
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		IUserMapper mapper = session.getMapper(IUserMapper.class);
+		// 5.执行查询一个方法
+		User user = mapper.findById(50);
+		System.out.println(user);
+	}
+
+
+	public void testFindByName() {
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		IUserMapper mapper = session.getMapper(IUserMapper.class);
+		// 5.执行查询一个方法
+		List<User> users = mapper.findByName("%王%");
+		// List<User> users = userDao.findByName("王");
+		for (User user : users) {
+			System.out.println(user);
+		}
+	}
+
+
+	public void testFindTotal() {
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		IUserMapper mapper = session.getMapper(IUserMapper.class);
+		// 5.执行查询一个方法
+		int count = mapper.findTotal();
+		System.out.println(count);
+	}
+
+	/**
+	 * 测试使用QueryVo作为查询条件
+	 */
+	@Test
+	public void testFindByVo() {
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		IUserMapper mapper = session.getMapper(IUserMapper.class);
+		QueryVo vo = new QueryVo();
+		User user = new User();
+		user.setUserName("%王%");
+		vo.setUser(user);
+		// 5.执行查询一个方法
+		List<User> users = mapper.findUserByVo(vo);
+		for (User u : users) {
+			System.out.println(u);
+		}
+	}
+}

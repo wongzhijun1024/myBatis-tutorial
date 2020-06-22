@@ -1,0 +1,87 @@
+package com.ff.test;
+
+import com.ff.bean.User;
+import com.ff.mapper.IUserMapper;
+import com.ff.mybatis.util.DBUtil;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.io.InputStream;
+import java.util.Date;
+import java.util.List;
+
+
+public class AnnotationCRUDTest {
+	public static void main(String[] args) {
+		AnnotationCRUDTest test = new AnnotationCRUDTest();
+		
+		test.testSave();
+	}
+
+
+
+    @Test
+    public void testSave(){
+      	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+      	IUserMapper mapper = session.getMapper(IUserMapper.class);
+        User user = new User();
+        user.setUsername("mybatis annotation");
+        user.setAddress("北京市昌平区");
+
+        mapper.saveUser(user);
+    }
+
+    @Test
+    public void testUpdate(){
+    	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+      	IUserMapper mapper = session.getMapper(IUserMapper.class);
+        User user = new User();
+        user.setId(57);
+        user.setUsername("mybatis annotation update");
+        user.setAddress("北京市海淀区");
+        user.setSex("男");
+        user.setBirthday(new Date());
+
+        mapper.updateUser(user);
+    }
+
+
+    @Test
+    public void testDelete(){
+    	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+      	IUserMapper mapper = session.getMapper(IUserMapper.class);
+      	mapper.deleteUser(51);
+    }
+
+    @Test
+    public void testFindOne(){
+    	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+      	IUserMapper mapper = session.getMapper(IUserMapper.class);
+        User user = mapper.findById(57);
+        System.out.println(user);
+    }
+
+
+    @Test
+    public  void testFindByName(){
+    	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+      	IUserMapper mapper = session.getMapper(IUserMapper.class);
+//        List<User> users = userDao.findUserByName("%mybatis%");
+        List<User> users = userDao.findUserByName("mybatis");
+        for(User user : users){
+            System.out.println(user);
+        }
+    }
+
+    @Test
+    public  void testFindTotal(){
+        int total = userDao.findTotalUser();
+        System.out.println(total);
+    }
+}

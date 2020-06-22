@@ -1,0 +1,41 @@
+package com.ff.test;
+
+import com.ff.bean.User;
+import com.ff.mapper.IUserMapper;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.io.InputStream;
+import java.util.List;
+
+
+public class UserTest {
+	
+	public static void main(String[] args) {
+		UserTest test = new UserTest();
+	}
+
+
+
+    /**
+     * 测试查询所有
+     */
+    @Test
+    public void testFindAll(){
+        List<User> users = userDao.findAll();
+//        for(User user : users){
+//            System.out.println("-----每个用户的信息------");
+//            System.out.println(user);
+//            System.out.println(user.getAccounts());
+//        }
+    }
+
+
+
+}

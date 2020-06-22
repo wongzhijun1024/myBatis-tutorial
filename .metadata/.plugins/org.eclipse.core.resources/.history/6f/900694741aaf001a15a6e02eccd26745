@@ -1,0 +1,115 @@
+package com.ff.test;
+
+import com.ff.bean.User;
+import com.ff.mapper.IUserMapper;
+import com.ff.mybatis.util.DBUtil;
+import org.apache.ibatis.session.SqlSession;
+import java.util.Date;
+import java.util.List;
+
+/**
+ * 
+ * 测试mybatis的crud操作
+ */
+public class MybatisTest {
+
+	public void saveUser() {
+
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+
+		try {
+			// 3、获取接口的实现类对象
+			// 会为接口自动的创建一个代理对象，代理对象去执行增删改查方法
+			IUserMapper mapper = session.getMapper(IUserMapper.class);
+
+			User user = new User();
+			user.setUserName("for free");
+			user.setUserAddress("成都市武侯区");
+			user.setUserSex("男");
+			user.setUserBirthday(new Date());
+			// 5.执行保存方法
+			mapper.saveUser(user);
+
+			session.commit(); // 7.释放资源
+			session.close(); // 8关闭会话
+			// 注意，还应该关闭流，现在还没有
+
+		} finally {
+			session.close();
+		}
+
+	}
+
+	private void findOne() throws Exception {
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		// 3、获取接口的实现类对象
+		// 会为接口自动的创建一个代理对象，代理对象去执行增删改查方法
+		IUserMapper mapper = session.getMapper(IUserMapper.class);
+
+		User user = mapper.findById(41);
+
+		System.out.println(user);
+	}
+
+	private void testUpdateUser() throws Exception {
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		// 3、获取接口的实现类对象
+		// 会为接口自动的创建一个代理对象，代理对象去执行增删改查方法
+		IUserMapper mapper = session.getMapper(IUserMapper.class);
+		// 1.根据 id 查询
+		User user = mapper.findById(41);
+
+		// 2.更新操作
+		user.setUserAddress("成都高新区2");
+		int res = mapper.updateUser(user);
+		session.commit(); // 7.释放资源
+		session.close(); // 8关闭会话
+		// 注意，还应该关闭流，现在还没有
+
+		System.out.println(res);
+	}
+
+	public void deleteUser() throws Exception {
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		// 3、获取接口的实现类对象
+		// 会为接口自动的创建一个代理对象，代理对象去执行增删改查方法
+		IUserMapper mapper = session.getMapper(IUserMapper.class);
+		// 删除用户
+		int resID = mapper.deleteUser(53);
+		System.out.println(resID);
+		session.commit(); // 7.释放资源
+		session.close(); // 8关闭会话
+
+	}
+
+	public void findByName() throws Exception {
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		// 3、获取接口的实现类对象
+		// 会为接口自动的创建一个代理对象，代理对象去执行增删改查方法
+		IUserMapper mapper = session.getMapper(IUserMapper.class);
+		// 5.执行查询一个方法
+		//List<User> users = mapper.findByName("%3%");
+		List<User> users = mapper.findByName("3");
+		for (User user : users) {
+			System.out.println(user);
+		}
+	}
+	
+	public void findTotal()throws Exception{
+		
+		SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+		// 3、获取接口的实现类对象
+		// 会为接口自动的创建一个代理对象，代理对象去执行增删改查方法
+		IUserMapper mapper = session.getMapper(IUserMapper.class);
+	}
+
+	public static void main(String[] args) {
+		MybatisTest test = new MybatisTest();
+		try {
+			test.findByName();
+		} catch (Exception e) {
+
+			e.printStackTrace();
+		}
+	}
+}

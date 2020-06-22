@@ -1,0 +1,12 @@
+package com.ff.mapper;
+
+
+
+/**
+ * 用户的持久层接口
+ */
+public interface IUserMapper {
+
+	/** 
+	 * 根据用户信息，查询用户列表  * @param user  * @return  */ List<User> findByUser(User user); 
+}

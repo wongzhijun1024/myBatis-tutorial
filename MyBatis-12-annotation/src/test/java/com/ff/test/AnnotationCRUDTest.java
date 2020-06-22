@@ -1,0 +1,82 @@
+package com.ff.test;
+
+import com.ff.bean.User;
+import com.ff.mapper.IUserMapper;
+import com.ff.mybatis.util.DBUtil;
+import org.apache.ibatis.session.SqlSession;
+import java.util.Date;
+import java.util.List;
+
+
+public class AnnotationCRUDTest {
+	public static void main(String[] args) {
+		AnnotationCRUDTest test = new AnnotationCRUDTest();
+		
+		test.testFindAll();
+	}
+
+    
+    public void testSave(){
+      	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+      	IUserMapper mapper = session.getMapper(IUserMapper.class);
+        User user = new User();
+        user.setUsername("mybatis保存");
+        user.setAddress("成都市");
+
+        mapper.saveUser(user);
+    }
+
+
+    public void testUpdate(){
+    	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+      	IUserMapper mapper = session.getMapper(IUserMapper.class);
+        User user = new User();
+        user.setId(57);
+        user.setUsername("mybatis更新");
+        user.setAddress("成都市");
+        user.setSex("男");
+        user.setBirthday(new Date());
+
+        mapper.updateUser(user);
+    }
+
+    public void testDelete(){
+    	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+      	IUserMapper mapper = session.getMapper(IUserMapper.class);
+      	mapper.deleteUser(51);
+    }
+
+
+    public void testFindOne(){
+    	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+      	IUserMapper mapper = session.getMapper(IUserMapper.class);
+        User user = mapper.findById(57);
+        System.out.println(user);
+    }
+
+    public  void testFindByName(){
+    	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+      	IUserMapper mapper = session.getMapper(IUserMapper.class);
+//        List<User> users = userDao.findUserByName("%mybatis%");
+        List<User> users = mapper.findUserByName("mybatis");
+        for(User user : users){
+            System.out.println(user);
+        }
+    }
+
+    public  void testFindTotal(){
+    	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+      	IUserMapper mapper = session.getMapper(IUserMapper.class);
+        int total = mapper.findTotalUser();
+        System.out.println(total);
+    }
+    
+    public void testFindAll(){
+    	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+      	IUserMapper mapper = session.getMapper(IUserMapper.class);
+      	 List<User> users = mapper.findAll();
+         for(User user : users){
+             System.out.println(user);
+         }
+    }
+}

@@ -1,0 +1,46 @@
+package com.ff.test;
+
+import com.ff.bean.User;
+import com.ff.mapper.IAccountMapper;
+import com.ff.mapper.IUserMapper;
+import com.ff.mybatis.util.DBUtil;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.io.InputStream;
+
+
+public class SecondLevelCacheTest {
+
+
+
+    /**
+     * 测试一级缓存
+     */
+    @Test
+    public void testFirstLevelCache(){
+    	
+      	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+      	IAccountMapper mapper = session.getMapper(IUserMapper.class);
+
+        User user1 = mapper.findById(41);
+        System.out.println(user1);
+        sqlSession1.close();//一级缓存消失
+
+        SqlSession sqlSession2 = factory.openSession();
+        IUserMapper dao2 = sqlSession2.getMapper(IUserMapper.class);
+        User user2 = dao2.findById(41);
+        System.out.println(user2);
+        sqlSession2.close();
+
+        System.out.println(user1 == user2);
+    }
+
+
+}

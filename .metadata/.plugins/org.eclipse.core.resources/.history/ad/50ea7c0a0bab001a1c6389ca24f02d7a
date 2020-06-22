@@ -1,0 +1,27 @@
+package com.ff.test;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.hw.mybatis.util.DBUtil;
+
+public class EmployeeMapperTest {
+
+	public void selectAllClassAndStuTest() {
+		SqlSession session =  DBUtil.getSqlSessionFactory().openSession(); 
+		
+	}
+	
+	public static void main(String[] args) {
+		EmployeeMapperTest test = new EmployeeMapperTest();
+		test.selectAllClassAndStuTest();
+	}
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MyBatis-08-one2many/day03_eesy_03one2many.iml&apos; to &apos;mybatis-08-one2many.iml&apos;" description="Rename resource &apos;day03_eesy_03one2many.iml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="day03_eesy_03one2many.iml" name="mybatis-08-one2many.iml" stamp="1592812119684" updateReferences="true"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 packages to &apos;MyBatis-02-helloWorld/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;MyBatis_01_HelloWorlda&apos;&#x0D;&#x0A;- Destination element: &apos;MyBatis-02-helloWorld/src/main/java&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     MyBatis_01_HelloWorlda/src/com.atguigu.mybatis.dao&#x0D;&#x0A;     MyBatis_01_HelloWorlda/src/com.atguigu.mybatis.bean" description="Copy packages" destination="=MyBatis-02-helloWorld/src\/main\/java" element1="/src&lt;com.atguigu.mybatis.dao" element2="/src&lt;com.atguigu.mybatis.bean" flags="589830" fragments="2" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1591785991299" version="1.0"/>
+</session>

@@ -1,0 +1,11 @@
+package com.ff.mapper;
+
+
+
+/**
+ * 用户的持久层接口
+ */
+public interface IUserMapper {
+
+    
+}

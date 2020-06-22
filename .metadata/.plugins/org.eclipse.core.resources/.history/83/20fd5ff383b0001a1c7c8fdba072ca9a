@@ -1,0 +1,54 @@
+package com.ff.mapper;
+
+import java.util.List;
+
+import com.ff.bean.QueryVo;
+import com.ff.bean.User;
+
+/**
+ * 用户的持久层接口
+ */
+public interface IUserMapper {
+	
+	/**
+	 * 根据用户信息，查询用户列表 
+	 * @param user 
+	 * @return
+	 */
+	List<User> findByUser(User user); 
+	
+	/**
+	 * 根据用户信息，查询用户列表 
+	 * @param user 
+	 * @return
+	 */
+	List<User> findByUser2(User user); 
+	
+
+	 /**
+     * 查询所有用户
+     * @return
+     */
+    List<User> findAll();
+
+
+
+
+
+
+
+    /**
+     * 根据queryVo中的条件查询用户
+     * @param vo
+     * @return
+     */
+    List<User> findUserByVo(QueryVo vo);
+
+
+    /**
+     * 根据queryvo中提供的id集合，查询用户信息
+     * @param vo
+     * @return
+     */
+    List<User> findUserInIds(QueryVo vo);
+}

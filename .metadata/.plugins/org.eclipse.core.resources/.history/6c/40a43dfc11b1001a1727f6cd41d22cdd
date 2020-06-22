@@ -1,0 +1,36 @@
+package com.ff.test;
+
+import com.ff.bean.Role;
+import com.ff.mapper.IRoleMapper;
+
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import java.io.InputStream;
+import java.util.List;
+
+
+public class RoleTest {
+
+
+    /**
+     * 测试查询所有
+     */
+    @Test
+    public void testFindAll(){
+        List<Role> roles = roleDao.findAll();
+        for(Role role : roles){
+            System.out.println("---每个角色的信息----");
+            System.out.println(role);
+            System.out.println(role.getUsers());
+        }
+    }
+
+
+
+}

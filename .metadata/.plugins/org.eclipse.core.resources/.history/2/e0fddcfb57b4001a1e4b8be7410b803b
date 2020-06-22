@@ -1,0 +1,48 @@
+package com.ff.test;
+
+import com.ff.bean.User;
+import com.ff.mapper.IUserMapper;
+import com.ff.mybatis.util.DBUtil;
+import org.apache.ibatis.session.SqlSession;
+import java.util.List;
+
+
+public class AnnotationCRUDTest {
+  
+    public static void main(String[] args) {
+    	AnnotationCRUDTest test = new AnnotationCRUDTest();
+    	test.testFindOne();
+	}
+   
+
+    
+    public  void  testFindAll(){
+    	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+    	IUserMapper mapper = session.getMapper(IUserMapper.class);
+        List<User> users = mapper.findAll();
+        for(User user : users){
+            System.out.println(user);
+        }
+    }
+
+    
+    public void testFindOne(){
+    	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+    	IUserMapper mapper = session.getMapper(IUserMapper.class);
+        User user = mapper.findById(47);
+        System.out.println(user);
+    }
+
+
+    
+    public  void testFindByName(){
+    	SqlSession session = DBUtil.getSqlSessionFactory().openSession();
+    	IUserMapper mapper = session.getMapper(IUserMapper.class);
+        List<User> users = mapper.findUserByName("%mybatis%");
+        for(User user : users){
+            System.out.println(user);
+        }
+    }
+
+
+}

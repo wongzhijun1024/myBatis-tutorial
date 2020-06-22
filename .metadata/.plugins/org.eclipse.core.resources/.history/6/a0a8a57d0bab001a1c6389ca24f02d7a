@@ -1,0 +1,41 @@
+package com.ff.test;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.hw.mybatis.bean.Employee;
+import com.hw.mybatis.mapper.EmployeeMapper;
+import com.hw.mybatis.util.DBUtil;
+
+public class EmployeeMapperTest {
+
+	public void selectAllClassAndStuTest() {
+		SqlSession session =  DBUtil.getSqlSessionFactory().openSession(); 
+		
+		try {
+			// 3、获取接口的实现类对象
+			//会为接口自动的创建一个代理对象，代理对象去执行增删改查方法
+			EmployeeMapper mapper = session.getMapper(EmployeeMapper.class);
+			Employee employee = mapper.getEmpById(1);
+			System.out.println(mapper.getClass());
+			System.out.println(employee);
+		} finally {
+			session.close();
+		}
+
+		
+	}
+	
+	public static void main(String[] args) {
+		EmployeeMapperTest test = new EmployeeMapperTest();
+		test.selectAllClassAndStuTest();
+	}
+}
+
+
+
+
+
+
+
+
+

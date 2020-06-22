@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;MyBatis-07-dynamicSQL/day03_eesy_02dynamicSQL.iml&apos; to &apos;mybatis-07-dynamicSQL.iml&apos;" description="Rename resource &apos;day03_eesy_02dynamicSQL.iml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="day03_eesy_02dynamicSQL.iml" name="mybatis-07-dynamicSQL.iml" stamp="1592812084324" updateReferences="true"/>
+</session>

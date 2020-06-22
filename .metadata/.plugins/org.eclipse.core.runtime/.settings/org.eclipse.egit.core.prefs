@@ -1,3 +1,4 @@
-GitRepositoriesView.GitDirectories=E\:\\01developer\\02code\\07java\\MyBatis-Tutorial\\.git;
-GitRepositoriesView.GitDirectories.relative=.git;
+GitRepositoriesView.GitDirectories=E\:\\01developer\\02code\\02java\\myBatis\\code\\myBatis\\.git;
+GitRepositoriesView.GitDirectories.relative=myBatis\\.git;
+core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

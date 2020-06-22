@@ -1,0 +1,14 @@
+package com.ff.mapper;
+
+import java.util.List;
+
+import com.ff.bean.QueryVo;
+import com.ff.bean.User;
+
+/**
+ * 用户的持久层接口
+ */
+public interface IUserMapper {
+
+    
+}

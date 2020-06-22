@@ -1,0 +1,13 @@
+1592449684149	Rename package 'com.itheima.dao'
+1592449702718	Rename package 'com.itheima.domain'
+1592449719082	Rename type 'IRoleDao'
+1592449733284	Rename type 'IUserDao'
+1592449771540	Delete elements
+1592449773966	Copy files
+1592449776759	Delete element
+1592449791477	Rename resource 'IRoleDao.xml'
+1592449799179	Rename resource 'IUserDao.xml'
+1592449831781	Delete element
+1592450059414	Delete elements
+1592450061188	Copy compilation units
+1592451059144	Rename package 'com.itheima.test'

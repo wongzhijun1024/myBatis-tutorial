@@ -1,0 +1,28 @@
+package com.ff.test;
+
+import java.util.List;
+import org.apache.ibatis.session.SqlSession;
+
+import com.hw.mybatis.util.DBUtil;
+
+public class ClazzMapperTest {
+
+	public void selectAllClassAndStuTest() {
+		SqlSession session =  DBUtil.getSqlSessionFactory().openSession(); 
+		
+	}
+	
+	public static void main(String[] args) {
+		ClazzMapperTest test = new ClazzMapperTest();
+		test.selectAllClassAndStuTest();
+	}
+}
+
+
+
+
+
+
+
+
+

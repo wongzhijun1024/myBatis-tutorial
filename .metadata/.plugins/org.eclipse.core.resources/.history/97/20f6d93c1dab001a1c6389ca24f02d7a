@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+   <properties resource="mybatis/jdbc.properties"/>
+	<environments default="development">  <!-- 指定运行使用环境 -->
+		<environment id="development">  <!-- 环境名字 -->
+			<transactionManager type="JDBC" >  <!-- 指定只用事务类型 -->
+				<property name="autoCommit" value="false" />   <!-- 设定是否自动提交 -->
+			</transactionManager>
+			<dataSource type="POOLED">  <!-- 数据库连接方式 -->
+				<property name="driver" value="${driver}" />  <!-- 数据库驱动 有的时候mysql版本较高，驱动需要更新-->
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />  <!-- 用户名 -->
+				<property name="password" value="${driver}" />    <!-- 密码 -->
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="mapper/EmployeeMapper.xml" />   <!-- 指定映射 -->
+	</mappers>
+</configuration>
